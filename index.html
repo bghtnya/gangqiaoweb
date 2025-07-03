@@ -1,0 +1,772 @@
+<html lang="zh-CN"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>港桥财务咨询有限公司</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#00B42A',
+                        dark: '#333333',
+                        light: '#F5F7FA',
+                        accent: '#FF7D00'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .bg-gradient-custom {
+                background: linear-gradient(135deg, #165DFF 0%, #0A2463 100%);
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter text-dark bg-white">
+    <!-- 导航栏 -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 shadow-sm">
+        <div class="container mx-auto px-4 md:px-6 py-3">
+            <div class="flex items-center justify-between">
+                <a href="#" class="flex items-center space-x-2">
+                    <img src="logo.jpg" alt="网站 logo" class="w-10 h-10 rounded-lg">
+                    <span class="text-xl font-bold text-dark">港桥</span>
+                </a>
+                
+                <!-- 桌面导航 -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary transition-custom font-medium">首页</a>
+                    <a href="#about" class="text-dark hover:text-primary transition-custom font-medium">关于我们</a>
+                    <a href="#services" class="text-dark hover:text-primary transition-custom font-medium">核心服务</a>
+                    <a href="#technology" class="text-dark hover:text-primary transition-custom font-medium">技术优势</a>
+                    <a href="#cases" class="text-dark hover:text-primary transition-custom font-medium">成功案例</a>
+                    <a href="#news" class="text-dark hover:text-primary transition-custom font-medium">新闻动态</a>
+                    <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-custom font-medium">联系我们</a>
+                </nav>
+                
+                <!-- 移动端菜单按钮 -->
+                <button id="menuBtn" class="md:hidden text-dark focus:outline-none">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="text-dark hover:text-primary py-2 transition-custom">首页</a>
+                <a href="#about" class="text-dark hover:text-primary py-2 transition-custom">关于我们</a>
+                <a href="#services" class="text-dark hover:text-primary py-2 transition-custom">核心服务</a>
+                <a href="#technology" class="text-dark hover:text-primary py-2 transition-custom">技术优势</a>
+                <a href="#cases" class="text-dark hover:text-primary py-2 transition-custom">成功案例</a>
+                <a href="#news" class="text-dark hover:text-primary py-2 transition-custom">新闻动态</a>
+                <a href="#contact" class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg transition-custom text-center">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section id="home" class="pt-28 pb-20 md:pt-36 md:pb-28 bg-gradient-to-br from-light to-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-dark mb-6">
+                        让数据<span class="text-primary">智能</span>驱动<br>企业决策未来
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg">
+                        万亿级数据清洗、AI智能加工、行业定制化解决方案，为金融、证券、物流等行业提供全链路数据价值挖掘服务。
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#services" class="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-lg transition-custom font-medium text-center">
+                            了解服务 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#contact" class="border-2 border-primary text-primary hover:bg-primary/5 px-8 py-3 rounded-lg transition-custom font-medium text-center">
+                            预约咨询
+                        </a>
+                    </div>
+                    <div class="mt-10 flex items-center space-x-6">
+                        <div class="flex -space-x-2">
+                            <img src="https://picsum.photos/id/1005/40/40" alt="客户头像" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://picsum.photos/id/1012/40/40" alt="客户头像" class="w-10 h-10 rounded-full border-2 border-white">
+                            <img src="https://picsum.photos/id/1027/40/40" alt="客户头像" class="w-10 h-10 rounded-full border-2 border-white">
+                        </div>
+                        <div>
+                            <div class="flex items-center">
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <i class="fa fa-star text-yellow-400"></i>
+                                <span class="ml-2 text-gray-600">4.9/5</span>
+                            </div>
+                            <p class="text-sm text-gray-500">来自100+行业客户的认可</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="bg-white rounded-2xl shadow-2xl p-6 relative z-10 transform transition-all duration-500 hover:scale-[1.02]">
+                        <img src="https://picsum.photos/id/180/800/500" alt="数据处理可视化" class="w-full h-auto rounded-xl">
+                        <div class="absolute -bottom-5 -right-5 bg-secondary text-white px-4 py-2 rounded-lg shadow-lg">
+                            <p class="font-medium">AI驱动的数据处理</p>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+                    <div class="absolute -top-5 -left-5 w-32 h-32 bg-accent/10 rounded-full blur-2xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户 logos -->
+    <section class="py-12 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <p class="text-center text-gray-500 mb-8">受到行业领先企业的信赖</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="h-10 opacity-70 hover:opacity-100 transition-custom grayscale hover:grayscale-0">
+                    <img src="https://picsum.photos/id/0/120/40" alt="客户logo" class="h-full w-auto">
+                </div>
+                <div class="h-10 opacity-70 hover:opacity-100 transition-custom grayscale hover:grayscale-0">
+                    <img src="https://picsum.photos/id/1/120/40" alt="客户logo" class="h-full w-auto">
+                </div>
+                <div class="h-10 opacity-70 hover:opacity-100 transition-custom grayscale hover:grayscale-0">
+                    <img src="https://picsum.photos/id/2/120/40" alt="客户logo" class="h-full w-auto">
+                </div>
+                <div class="h-10 opacity-70 hover:opacity-100 transition-custom grayscale hover:grayscale-0">
+                    <img src="https://picsum.photos/id/3/120/40" alt="客户logo" class="h-full w-auto">
+                </div>
+                <div class="h-10 opacity-70 hover:opacity-100 transition-custom grayscale hover:grayscale-0">
+                    <img src="https://picsum.photos/id/4/120/40" alt="客户logo" class="h-full w-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">关于我们</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">中国新兴数据处理行业领军者，专注于为高数据量需求行业提供“清洗-处理-加工-应用”一体化解决方案</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2 relative">
+                    <img src="https://picsum.photos/id/20/600/400" alt="公司团队" class="w-full h-auto rounded-2xl shadow-xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
+                        <div class="flex items-center space-x-4 mb-3">
+                            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                <i class="fa fa-users text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark">200+</h3>
+                                <p class="text-sm text-gray-500">数据科学家与AI工程师</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                                <i class="fa fa-database text-secondary text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-dark">50PB+</h3>
+                                <p class="text-sm text-gray-500">累计处理数据量</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="space-y-8">
+                        <div class="bg-light p-6 rounded-xl card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-rocket text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark mb-2">企业定位</h3>
+                                    <p class="text-gray-600">依托AI技术重构数据价值链条，为金融、证券、期货、物流等行业提供全链条数据价值挖掘服务。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-xl card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-shield text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark mb-2">核心优势</h3>
+                                    <p class="text-gray-600">通过ISO 27001信息安全认证、金融数据处理合规资质，保障客户数据安全与隐私，服务客户续约率达92%。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-light p-6 rounded-xl card-hover">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-trophy text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark mb-2">行业地位</h3>
+                                    <p class="text-gray-600">中国软件行业协会副理事长单位，多次入选中国信创500强榜单，服务超100家金融机构、50家物流头部企业。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心服务 -->
+    <section id="services" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">核心服务</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">全流程数据处理解决方案，为企业提供从清洗到应用的一站式数据服务</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 服务卡片 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/36/600/400" alt="数据清洗与预处理" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">数据清洗与预处理</h3>
+                        <p class="text-gray-600 mb-4">去除重复值、异常值修复、缺失值填充，支持结构化、半结构化、非结构化数据清洗。</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">多源异构数据融合</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">自动化异常检测</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">数据质量评估报告</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            了解详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 服务卡片 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/239/600/400" alt="智能加工与格式转换" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">智能加工与格式转换</h3>
+                        <p class="text-gray-600 mb-4">基于深度学习的关键字提取模型，支持多语言、多行业术语精准识别与自动化格式转换。</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">NLP语义分析</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">多格式输出支持</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">自定义模板配置</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            了解详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 服务卡片 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/160/600/400" alt="数据排列组合与关联分析" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-dark mb-3">数据排列组合与关联分析</h3>
+                        <p class="text-gray-600 mb-4">根据业务需求按关键字维度重组数据，挖掘数据关联关系，支持风险预警模型构建。</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">多维度数据重组</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">关联规则挖掘</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">实时数据分析引擎</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            了解详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术优势 -->
+    <section id="technology" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">技术优势</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">AI赋能数据处理，构建核心技术壁垒</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 技术卡片 1 -->
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-brain text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">智能语义分析平台</h3>
+                    <p class="text-gray-600">支持金融文本（研报、合同）语义解析，提取关键指标与实体关系，助力证券研报数据结构化处理。</p>
+                    <div class="mt-6">
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">NLP识别准确率：95%</p>
+                    </div>
+                </div>
+                
+                <!-- 技术卡片 2 -->
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-key text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">动态关键字引擎</h3>
+                    <p class="text-gray-600">实时追踪行业热词库，自动调整数据排列组合规则，为期货市场舆情数据监控提供技术支持。</p>
+                    <div class="mt-6">
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" style="width: 98%"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">关键词匹配率：98%</p>
+                    </div>
+                </div>
+                
+                <!-- 技术卡片 3 -->
+                <div class="bg-light p-8 rounded-2xl card-hover">
+                    <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
+                        <i class="fa fa-code text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">低代码数据中台</h3>
+                    <p class="text-gray-600">客户可自主配置数据处理流程，无需编程经验，支持物流企业定制化数据报表生成。</p>
+                    <div class="mt-6">
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div class="bg-primary h-2.5 rounded-full" style="width: 92%"></div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-1">功能覆盖率：92%</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 技术指标对比 -->
+            <div class="mt-16 bg-white rounded-2xl shadow-xl p-8">
+                <h3 class="text-2xl font-bold text-dark mb-8 text-center">技术性能对比</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-light">
+                                <th class="py-3 px-4 font-semibold text-dark">技术指标</th>
+                                <th class="py-3 px-4 font-semibold text-dark">数据智汇云</th>
+                                <th class="py-3 px-4 font-semibold text-dark">传统解决方案</th>
+                                <th class="py-3 px-4 font-semibold text-dark">市场平均水平</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 px-4 font-medium">数据处理速度</td>
+                                <td class="py-4 px-4 text-green-600">10万条/秒</td>
+                                <td class="py-4 px-4 text-gray-500">1万条/秒</td>
+                                <td class="py-4 px-4 text-gray-500">5万条/秒</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 px-4 font-medium">关键字识别准确率</td>
+                                <td class="py-4 px-4 text-green-600">98%</td>
+                                <td class="py-4 px-4 text-gray-500">85%</td>
+                                <td class="py-4 px-4 text-gray-500">90%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 px-4 font-medium">数据清洗完整率</td>
+                                <td class="py-4 px-4 text-green-600">99.9%</td>
+                                <td class="py-4 px-4 text-gray-500">95%</td>
+                                <td class="py-4 px-4 text-gray-500">97%</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4 px-4 font-medium">自定义开发周期</td>
+                                <td class="py-4 px-4 text-green-600">5个工作日内</td>
+                                <td class="py-4 px-4 text-gray-500">30天</td>
+                                <td class="py-4 px-4 text-gray-500">15天</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-4 font-medium">总体拥有成本</td>
+                                <td class="py-4 px-4 text-green-600">↓40%</td>
+                                <td class="py-4 px-4 text-gray-500">基准</td>
+                                <td class="py-4 px-4 text-gray-500">↑15%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 行业解决方案 -->
+    <section class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">行业解决方案</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">针对不同行业特点，提供定制化数据处理解决方案</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 行业卡片 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://picsum.photos/id/104/600/400" alt="金融行业解决方案" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-xl font-bold text-white p-6">金融行业</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">银行交易数据清洗、券商客户行为分析、保险理赔数据核验，助力金融机构提升风控能力与客户体验。</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">反洗钱数据监测</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">客户画像构建</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">风险模型训练</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            了解详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 行业卡片 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://picsum.photos/id/24/600/400" alt="证券期货行业解决方案" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-xl font-bold text-white p-6">证券期货行业</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">实时行情数据去噪、历史数据回溯加工，支持量化交易模型训练，毫秒级数据延迟处理满足高频交易需求。</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">高频数据清洗</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">量化模型训练</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">市场情绪分析</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            了解详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 行业卡片 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://picsum.photos/id/119/600/400" alt="物流行业解决方案" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+                            <h3 class="text-xl font-bold text-white p-6">物流行业</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">订单数据与运输轨迹数据融合，生成可视化物流图谱，优化路由规划，降低仓储成本。</p>
+                        <div class="space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">供应链可视化</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">智能仓储管理</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fa fa-check text-secondary mr-2"></i>
+                                <span class="text-gray-600">运输路线优化</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            了解详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成功案例 -->
+    <section id="cases" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">成功案例</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">我们如何帮助客户解决数据处理难题并创造价值</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- 案例 1 -->
+                <div class="bg-light rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row">
+                    <div class="md:w-2/5">
+                        <img src="https://picsum.photos/id/26/400/600" alt="证券行业案例" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-3/5 p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">证券行业</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">某头部证券公司数据治理项目</h3>
+                        <p class="text-gray-600 mb-4">清洗10年历史研报数据（超50万条），通过NLP提取行业关键词与投资逻辑，构建内部知识图谱，研报检索效率提升80%。</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">处理数据量</span>
+                                <span class="font-medium">50万条</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">项目周期</span>
+                                <span class="font-medium">3个月</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">效率提升</span>
+                                <span class="font-medium">80%</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 案例 2 -->
+                <div class="bg-light rounded-2xl overflow-hidden shadow-lg flex flex-col md:flex-row">
+                    <div class="md:w-2/5">
+                        <img src="https://picsum.photos/id/174/400/600" alt="物流行业案例" class="w-full h-full object-cover">
+                    </div>
+                    <div class="md:w-3/5 p-6">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full">物流行业</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">某跨境物流企业数据整合项目</h3>
+                        <p class="text-gray-600 mb-4">整合全球300万条运输数据，按“港口+时间+货类”维度重组，帮助客户降低仓储成本15%，优化供应链效率。</p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">处理数据量</span>
+                                <span class="font-medium">300万条</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">项目周期</span>
+                                <span class="font-medium">4个月</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">成本降低</span>
+                                <span class="font-medium">15%</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            查看详情 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻动态 -->
+    <section id="news" class="py-20 bg-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">新闻动态</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">了解数据处理与人工智能领域的前沿资讯</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 新闻卡片 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/3/600/400" alt="AI大模型重塑金融数据处理流程" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-3">
+                            <i class="fa fa-calendar mr-2"></i>
+                            <span>2025年6月15日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">AI大模型如何重塑金融数据处理流程？</h3>
+                        <p class="text-gray-600 mb-4">随着大模型技术的发展，金融数据处理正经历从规则驱动向智能驱动的转变，本文探讨了这一变革的关键趋势与挑战...</p>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            阅读全文 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/180/600/400" alt="数据合规时代的挑战与机遇" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-3">
+                            <i class="fa fa-calendar mr-2"></i>
+                            <span>2025年5月28日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">数据合规时代：物流企业如何平衡效率与安全？</h3>
+                        <p class="text-gray-600 mb-4">在数据隐私法规日益严格的背景下，物流企业如何在保障数据安全的同时，充分挖掘数据价值？本文分享了行业领先实践...</p>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            阅读全文 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- 新闻卡片 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1/600/400" alt="数据智汇AI平台2.0发布" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-gray-500 text-sm mb-3">
+                            <i class="fa fa-calendar mr-2"></i>
+                            <span>2025年4月10日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark mb-3">公司动态：自研“数据智汇AI平台2.0”上线</h3>
+                        <p class="text-gray-600 mb-4">我司新一代数据处理平台正式发布，新增多模态数据处理功能，支持图像、语音等非结构化数据的清洗与分析，处理效率提升300%...</p>
+                        <a href="#" class="text-primary hover:text-primary/80 font-medium inline-flex items-center">
+                            阅读全文 <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-dark mb-4">联系我们</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">立即预约咨询，让我们的专家为您定制专属数据处理解决方案</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-light p-8 rounded-2xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-dark mb-6">咨询表单</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">姓名</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary/20 outline-none transition-custom" placeholder="请输入您的姓名">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-gray-700 font-medium mb-2">公司名称</label>
+                                    <input type="text" id="company" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary/20 outline-none transition-custom" placeholder="请输入您的公司名称">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="phone" class="block text-gray-700 font-medium mb-2">电话</label>
+                                    <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary/20 outline-none transition-custom" placeholder="请输入您的联系电话">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">邮箱</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary/20 outline-none transition-custom" placeholder="请输入您的邮箱地址">
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="industry" class="block text-gray-700 font-medium mb-2">所属行业</label>
+                                <select id="industry" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary/20 outline-none transition-custom">
+                                    <option value="">请选择行业</option>
+                                    <option value="finance">金融</option>
+                                    <option value="securities">证券期货</option>
+                                    <option value="logistics">物流</option>
+                                    <option value="other">其他</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">咨询内容</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary/20 outline-none transition-custom" placeholder="请简要描述您的需求"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg transition-custom font-medium text-lg">
+                                提交咨询 <i class="fa fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gradient-custom p-8 rounded-2xl shadow-lg text-white">
+                        <h3 class="text-2xl font-bold mb-6">联系方式</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-map-marker-alt text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">总部地址</h4>
+                                    <p>中国（上海）自由贸易试验区临港新片区新城路2号24幢C1718室</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-phone text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">服务热线</h4>
+                                    <p>138-0181-9269</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">
+                                    <i class="fa fa-envelope text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">商务邮箱</h4>
+                                    <p>2946379707@qq.com</p>
+                                </div>
+                            </div>
+<!--                            <div class="flex items-start space-x-4">-->
+<!--                                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0">-->
+<!--                                    <i class="fa fa-clock text-white text-xl"></i>-->
+<!--                                </div>-->
